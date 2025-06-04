@@ -1,9 +1,9 @@
 {
   "name": "velopolis.cc-landing-page",
-  "main": "./landing-page/index.js",
+  "main": "index.js",
   "compatibility_date": "2025-01-01",
   "assets": {
-    "directory": "./landing-page",
+    "directory": "./",
     "binding": "ASSETS"
   }
 }
