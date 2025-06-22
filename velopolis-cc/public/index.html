@@ -2,55 +2,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>velopolis.cc</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .image-container {
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-        }
-        .image-container img {
-            width: 100%;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .image-container img.active {
-            display: block;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url('image1.jpg');
+
+            /* Full height */
+            height: 100%; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Add the animation */
+            animation: slide 25s infinite;
+        }
+
+        @keyframes slide {
+            0% {background-image: url('assets/IMG_01.png');}
+            20% {background-image: url('assets/IMG_02.png');}
+            40% {background-image: url('assets/IMG_03.png');}
+            60% {background-image: url('assets/IMG_04.png');}
+            80% {background-image: url('assets/IMG_05.png');}
+            100% {background-image: url('assets/IMG_01.png');}
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="./assets/IMG_01.png" alt="Image 1" class="active">
-        <img src="./assets/IMG_02.png" alt="Image 2">
-        <img src="./assets/IMG_03.png" alt="Image 3">
-        <img src="./assets/IMG_04.png" alt="Image 4">
-        <img src="./assets/IMG_05.png" alt="Image 5">
-    </div>
 
-    <script>
-        const images = document.querySelectorAll('.image-container img');
-        let currentIndex = 0;
+<div class="bg"></div>
 
-        function rotateImages() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
+<div class="content">
+    <h1>Welcome to Our Landing Page</h1>
+    <p>This is a responsive landing page with rotating background images.</p>
+</div>
 
-        setInterval(rotateImages, 5000);
-    </script>
 </body>
 </html>
